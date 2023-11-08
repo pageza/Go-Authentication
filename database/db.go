@@ -14,7 +14,7 @@ var DB *gorm.DB
 
 func init() {
 	var err error
-	dsn := os.Getenv("POSTGRE_DSN")
+	dsn := os.Getenv("DATABASE_URL")
 	DB, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log.Fatal(err)
